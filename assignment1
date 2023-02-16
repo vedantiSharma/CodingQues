@@ -1,0 +1,131 @@
+
+GRADING STUDENT*******
+
+public static List<Integer> gradingStudents(List<Integer> grades) {
+   
+         List<Integer> list = new ArrayList<>();
+         for(int i = 0 ; i<grades.size() ; i++){
+             int x = grades.get(i);
+             int remainder = x % 5;
+             if(x>=38 && ((x+5) - remainder)-x <3){
+                 list.add((x+5) - remainder);
+             }
+             else{
+                 list.add(x);
+             }
+         }return  list;
+         
+    }
+    
+    APPLE ORANGE**********
+    
+    public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+    int count = 0;
+      for(int i =0 ; i< apples.size() ; i++){
+          int dis = apples.get(i)+ a;
+          if(dis >= s && dis <= t){
+              count++;
+          }
+      }
+      System.out.println(count);
+      count =0;
+      for(int i =0 ; i< oranges.size() ; i++ ){
+          int dis = oranges.get(i) + b;
+          if(dis>= s && dis<= t){
+              count++;
+          }
+      }
+      System.out.println(count);
+    } 
+   
+   
+   BREAKING RECORD*******
+   public static List<Integer> breakingRecords(List<Integer> scores) {
+    
+       int MAXscore = scores.get(0);
+        int MINscore = scores.get(0);
+        
+        int minCount = 0;
+        int maxCount = 0;
+        ArrayList<Integer>  answers = new ArrayList<>();
+        
+        for (int i = 0 ; i<scores.size() ; i++ ) {
+            
+            if(scores.get(i) > MAXscore){
+                MAXscore = scores.get(i);
+                maxCount++;
+                
+            }
+            
+             if(scores.get(i) < MINscore){
+                MINscore = scores.get(i);
+                minCount++;
+                
+        }
+        }
+        
+        answers.add(maxCount);
+        answers.add(minCount);
+        return answers;
+        
+        }  
+    }
+
+DIVISBLE SUM PAIR***********
+
+    public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+    // Write your code here
+    int Total_pairs =0;
+    for(int i = 0 ; i< n; i++){
+         
+        for(int j= i+1 ; j<n; j++){
+           
+        if((ar.get(i)+ar.get(j)) % k ==0){
+            
+            Total_pairs++;
+        }
+        }
+    }
+    return Total_pairs;
+}
+
+
+
+  KANGROOOO 
+    
+        public static String kangaroo(int x1, int v1, int x2, int v2) {
+    // Write your code here
+if(x2>x1&&v1>2)
+{
+    if((x2-x1)%(v1-v2)==0)
+    {
+        return "YES";
+    }
+    else return "NO";
+}
+return "NO";
+}
+    }
+    
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
