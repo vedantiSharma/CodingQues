@@ -1,0 +1,33 @@
+//*******print elements of linkedlist*******//
+       while(head!= null){
+           System.out.println(head.data);
+           head = head.next;
+           
+           
+ //**********add node at the tail of LL*//          
+           SinglyLinkedListNode newnode =  new SinglyLinkedListNode(data);
+        SinglyLinkedListNode temp = head;
+        if(head== null){
+            head= newnode;
+            return head;
+        }
+        while(temp.next != null){
+            temp  = temp.next;
+            
+        }
+         temp.next = newnode;
+         
+         
+        return head;
+        
+  //*****add node at the head of the LL***//      
+             
+      SinglyLinkedListNode temp= new SinglyLinkedListNode(data);
+      temp.next =llist;
+      llist =temp;
+      
+      return temp;
+      
+      
+
+        
