@@ -20,14 +20,40 @@
          
         return head;
         
-  //*****add node at the head of the LL***//      
-             
-      SinglyLinkedListNode temp= new SinglyLinkedListNode(data);
-      temp.next =llist;
-      llist =temp;
+ 
+    }
+    
+    
+    
+    //****************Cycle detection of linked list************//
+      static boolean hasCycle(SinglyLinkedListNode head) {
+
+        SinglyLinkedListNode high = head;
+        SinglyLinkedListNode low= head;
+    
+    while( high != null && high.next != null) {
+        high = high.next.next;
+        low = low.next;
+        
+        if(low.equals(high)) {
+            return true;
+        }
+    }
+    return false;
+    }
+    
+     //******Data at the postion from the tail********//
       
-      return temp;
-      
-      
+     public static int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+    
+     List<Integer> nodesList = new ArrayList<>();
+        while (llist != null) {
+            nodesList.add(llist.data);
+            llist = llist.next;
+        }
+        return nodesList.get(nodesList.size() - positionFromTail - 1);
+    }
+
+}
 
         
