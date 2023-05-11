@@ -1,4 +1,4 @@
-***********DYNAMIC ARRAYS (hr)**********
+***********    DYNAMIC ARRAYS (HR)    **********
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
     // Write your code here
     //   int[] arr = {};
@@ -8,25 +8,36 @@
         int lastAnswer = 0; // int n = 2;
         for (List<Integer> query: queries) {
             
-            if (query.get(0) == 1) { // Query 1:
+            if (query.get(0) == 1) { 
                 int idx = (query.get(1) ^ lastAnswer) % n;
-                // System.out.println(">> Query 1: idx = " + idx);
-                // if (tempArray.size()-1 > idx) {
+              
                     tempArray.get(idx).add(query.get(2));
-                // } else {
-                    
-                // }
-                
-            } else { // Query 2:
+          
+            } else {
                 int idx = (query.get(1) ^ lastAnswer) % n;
                 lastAnswer =  tempArray.get(idx).get(query.get(2) % tempArray.get(idx).size());
                 outputArray.add(lastAnswer);
-                
             }
-            
-        }
-      
+           }  
         return outputArray;
 
     }
     }
+    
+    
+    ***************   CONTAIN DUPLICATE (LC)  ************
+    
+    import java.util.HashSet;
+import java.util.Set;
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int i =0 ; i<nums.length ; i++){
+            set.add(nums[i]);
+        }
+       if(nums.length == set.size()){return false;}
+       
+       return true;
+        
+    }
+}
